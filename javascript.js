@@ -39,10 +39,66 @@ function getHumanChoice () {
     }
 }
 
+
+
+
+
+function playGame () {
+
 let humanScore = 0
 let computerScore = 0
 
-function playRound (humanChoice, computerChoice) {
-    
+function playRound (humanSelection, computerSelection) {
+    if (humanSelection === computerSelection) {
+        console.log("Tie")
+        return "tie"
+    } else if (humanSelection === "Paper" && computerSelection === "Rock") {
+        console.log("Congrats, you won!")
+        humanScore += 1
+        return "you win"
+    } else if (humanSelection === "Scissors" && computerSelection === "Paper") {
+        console.log ("Congrats, you won!")
+        humanScore += 1
+        return "you win"
+    } else if (humanSelection === "Rock" && computerSelection === "Scissors") {
+        console.log("Congrats, you won!")
+        humanScore += 1
+        return "you win"
+    } else {
+        console.log("You lost.")
+        computerScore += 1
+        return "you lost"
+    }
+}
+let humanSelection = getHumanChoice() 
+let computerSelection = getComputerChoice() 
+console.log(computerSelection)
+playRound (humanSelection, computerSelection)
+console.log(computerSelection)
+
+computerSelection = getComputerChoice()
+humanSelection = getHumanChoice()
+playRound (humanSelection, computerSelection)
+console.log(computerSelection)
+
+computerSelection = getComputerChoice()
+humanSelection = getHumanChoice()
+playRound (humanSelection, computerSelection)
+console.log(computerSelection)
+
+gcomputerSelection = getComputerChoice()
+humanSelection = getHumanChoice()
+playRound (humanSelection, computerSelection)
+console.log(computerSelection)
+
+computerSelection = getComputerChoice()
+humanSelection = getHumanChoice()
+playRound (humanSelection, computerSelection)
+console.log(computerSelection)
+
+console.log(humanScore)
+console.log(computerScore)
 
 }
+
+playGame()
